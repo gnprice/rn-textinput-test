@@ -15,10 +15,22 @@ import {
 
 type Props = {};
 export default class App extends Component<Props> {
+
+  state = {
+    value: '',
+  };
+
+  handleTextChange = (value) => {
+    this.setState({ value });
+  };
+
   render() {
     return (
       <View style={styles.container}>
-        <TextInput />
+        <TextInput
+           value={this.state.value}
+           onChangeText={this.handleTextChange}
+         />
       </View>
     );
   }
